@@ -61,10 +61,10 @@ class Solution(object):
         while l2 or l1 or carry == 1:
             sum = (l2.val if l2 else 0) + (l1.val if l1 else 0)  + ( carry  )   
             carry = 0 if sum <10 else 1 
-            final.val = sum if sum <10 else sum % 10
+            final.val = sum if sum <10 else sum%10
             l1= l1.next if l1 and l1.next else None
             l2= l2.next if l2 and l2.next else None
-            if (l1 and l1.next)or (l2 and l2.next) or carry ==1:
+            if (l1) or (l2) or carry ==1:
                 final.next = ListNode(0) 
                 final = final.next
 
