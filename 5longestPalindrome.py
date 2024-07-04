@@ -41,3 +41,17 @@ class Solution:
                     maxLen= len(longest)
         
         return longest
+    
+class Solution:
+   
+    def longestPalindrome(self, s: str) -> str:
+        longest=''
+        maxLen=0
+        for i in range(len(s)):
+            for j in range(i,len(s)):
+                word=s[i:j+1]
+                if  j-i+1>maxLen and word == word[::-1]:
+                    longest = word
+                    maxLen= j-i+1
+        
+        return longest
