@@ -20,7 +20,7 @@ class Solution:
             for index2 in range(index+1,len(nums) ):
                 value = target - (nums[index]+ nums[index2])
                 if value in counts:
-                    if index != index2 and index != counts[value]:
+                    if index != index2 and index != counts[value] and index2 != counts[value]:
                         ans = sorted([nums[index], nums[index2], value])
                         if ans not in lists:
                             lists.append(ans)
