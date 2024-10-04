@@ -1,0 +1,27 @@
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        if prices is None:
+            return 0
+        # maximum = 0
+        
+        # for index, x in enumerate(prices):
+        #     if index+1 != len(prices):
+        #         # sMax= max(prices[index+1 :]) 
+        #         maximum = max(maximum, max(prices[(index+1):]) -x)
+        # return maximum
+
+        buy=prices[0]
+
+        profit = 0
+        for x in prices:
+            buy = x if  buy > x else buy
+            profit = x-buy if x-buy > profit else profit
+            
+        return profit
+            
+
+
+
+        
+
+        
